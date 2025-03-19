@@ -1,0 +1,23 @@
+# Environment variables
+.env
+
+# Local environment files
+.env.local
+.env.*.local
+
+# Log files
+*.log
+
+# Editor directories and files
+.ai_agent/
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db

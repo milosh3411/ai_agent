@@ -7,6 +7,7 @@ load_dotenv()
 
 # Get API key from environment variables
 api_key = os.getenv("API_KEY")
+base_url = os.getenv("BASE_URL")
 if not api_key:
     raise ValueError("API_KEY environment variable is not set")
 
@@ -23,7 +24,7 @@ def create_message(thread_id, message_content):
     """
     try:
         # Initialize the OpenAI client with the API key
-        client = OpenAI(api_key=api_key)
+        client = OpenAI(api_key=api_key, base_url=base_url)
         
         # Create a new message in the thread
         message = client.beta.threads.messages.create(

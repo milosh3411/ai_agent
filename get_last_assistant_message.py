@@ -7,6 +7,8 @@ load_dotenv()
 
 # Get API key from environment variables
 api_key = os.getenv("API_KEY")
+base_url = os.getenv("BASE_URL")
+
 if not api_key:
     raise ValueError("API_KEY environment variable is not set")
 
@@ -22,7 +24,7 @@ def get_last_assistant_message(thread_id):
     """
     try:
         # Initialize the OpenAI client with the API key
-        client = OpenAI(api_key=api_key)
+        client = OpenAI(api_key=api_key, base_url=base_url)
         
         # List messages in the thread, newest first
         messages = client.beta.threads.messages.list(
